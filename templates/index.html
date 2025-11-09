@@ -1,0 +1,66 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Traductor - Demo</title>
+  <link rel="stylesheet" href="static/styles.css">
+</head>
+<body>
+  <main class="container">
+    <h1>Traductor de textos</h1>
+    <div class="theme-toggle">
+      <label class="switch">
+        <input id="themeCheckbox" type="checkbox" />
+        <span class="slider"></span>
+      </label>
+      <span id="themeLabel">Modo claro</span>
+    </div>
+
+    <form id="translateForm" class="card">
+      <label for="sourceLang">Idioma origen</label>
+      <select id="sourceLang">
+        <option value="auto">Detectar (auto)</option>
+        <option value="es">Español</option>
+        <option value="en">Inglés</option>
+        <option value="fr">Francés</option>
+        <option value="de">Alemán</option>
+        <option value="pt">Portugués</option>
+      </select>
+
+      <label for="targetLang">Idioma destino</label>
+      <select id="targetLang">
+        <option value="en">Inglés</option>
+        <option value="es" selected>Español</option>
+        <option value="fr">Francés</option>
+        <option value="de">Alemán</option>
+        <option value="pt">Portugués</option>
+      </select>
+
+      <label for="sourceText">Texto a traducir</label>
+      <textarea id="sourceText" rows="6" placeholder="Escribe o pega aquí el texto..."></textarea>
+
+      <div class="actions">
+        <button id="translateBtn" type="submit">Traducir</button>
+        <button id="swapBtn" type="button" title="Intercambiar idiomas">⤾</button>
+      </div>
+
+      <div id="status" class="status" aria-live="polite"></div>
+
+      <label for="resultText">Texto traducido</label>
+      <textarea id="resultText" rows="6" readonly placeholder="Aquí aparecerá la traducción..."></textarea>
+
+    </form>
+
+    <section class="notes card">
+      <h2>Notas</h2>
+      <ul>
+        <li>Esta es una demo frontend. Si no hay backend disponible, se usará una traducción simulada.</li>
+        <li>Para conectar un backend, expón un endpoint POST <code>/translate</code> que reciba JSON: <code>{source, target, text}</code> y devuelva <code>{translatedText}</code>.</li>
+      </ul>
+    </section>
+  </main>
+
+  <script src="static/main.js"></script>
+</body>
+</html>

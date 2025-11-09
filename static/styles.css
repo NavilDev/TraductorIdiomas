@@ -1,0 +1,51 @@
+:root{
+  --bg:#f4f6f8;
+  --card:#ffffff;
+  --accent:#2563eb;
+  --muted:#6b7280;
+  --text:#111827;
+  --muted-2:#6b7280;
+  --input-bg: #ffffff;
+  --input-border: #e6e9ef;
+  --input-placeholder: #9ca3af;
+}
+
+/* Tema oscuro */
+:root.dark{
+  --bg:#0b1220;
+  --card:#0f1724;
+  --accent:#60a5fa;
+  --muted:#9ca3af;
+  --text:#e6eef8;
+  --muted-2:#9ca3af;
+  --input-bg: #081024;
+  --input-border: #233044;
+  --input-placeholder: #6b7a8a;
+}
+
+*{box-sizing:border-box}
+body{font-family:Inter, Roboto, system-ui, -apple-system, 'Segoe UI', Arial; background:var(--bg); margin:0; color:var(--text); transition:background .22s, color .22s}
+.container{max-width:880px; margin:48px auto; padding:16px}
+.card{background:var(--card); padding:18px; border-radius:12px; box-shadow:0 6px 20px rgba(16,24,40,0.06);}
+h1{text-align:center}
+.theme-toggle{display:flex; align-items:center; justify-content:flex-end; gap:8px; margin-bottom:12px}
+.theme-toggle #themeLabel{color:var(--muted-2); font-size:14px}
+
+/* Toggle switch */
+.switch{position:relative; display:inline-block; width:44px; height:24px}
+.switch input{opacity:0; width:0; height:0}
+.slider{position:absolute; cursor:pointer; top:0; left:0; right:0; bottom:0; background:#ccc; transition:.2s; border-radius:999px}
+.slider:before{position:absolute; content:""; height:18px; width:18px; left:3px; bottom:3px; background:white; transition:.2s; border-radius:50%}
+.switch input:checked + .slider{background:var(--accent)}
+.switch input:checked + .slider:before{transform:translateX(20px)}
+form.card{display:flex; flex-direction:column; gap:10px}
+/* Inputs y selects usando variables de tema */
+select, textarea, input{width:100%; padding:10px; border-radius:8px; border:1px solid var(--input-border); background:var(--input-bg); color:var(--text); transition:background .18s, border-color .18s, color .18s}
+select::placeholder, textarea::placeholder, input::placeholder{color:var(--input-placeholder)}
+label{font-weight:600; color:var(--text)}
+.actions{display:flex; gap:8px; align-items:center}
+#translateBtn{background:var(--accent); color:white; border:none; padding:10px 14px; border-radius:8px; cursor:pointer}
+#swapBtn{background:transparent; border:1px solid var(--input-border); padding:8px 10px; border-radius:8px; cursor:pointer}
+.status{min-height:22px; color:var(--muted); font-size:14px}
+.notes{margin-top:18px}
+@media (max-width:600px){.container{margin:20px}}

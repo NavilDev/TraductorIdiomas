@@ -1,0 +1,70 @@
+# --------------------------
+# Entornos virtuales
+# --------------------------
+venv/
+env/
+__pycache__/
+*.py[cod]
+*.pyo
+
+# --------------------------
+# Archivos de logs
+# --------------------------
+*.log
+
+# --------------------------
+# Archivos de sistema
+# --------------------------
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# --------------------------
+# Configuración local
+# --------------------------
+*.env
+config.py
+
+# --------------------------
+# Archivos generados / dependencias
+# --------------------------
+*.sqlite3
+*.db
+*.egg-info/
+*.egg
+*.egg-cache/
+*.pyc
+*.pkl
+*.pt
+*.bin
+*.lib
+*.dylib
+
+# --------------------------
+# Carpeta de uploads temporales
+# --------------------------
+uploads/
+
+# --------------------------
+# Archivos IDE
+# --------------------------
+.vscode/
+.idea/
+*.iml
+*.ipr
+*.iws
+
+# --------------------------
+# Node / frontend
+# --------------------------
+node_modules/
+npm-debug.log
+yarn-error.log
+
+# --------------------------
+# Macros de compilación / cache
+# --------------------------
+__pycache__/
+*.so
+*.dll
+*.exe
