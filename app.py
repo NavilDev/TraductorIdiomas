@@ -14,7 +14,7 @@ POST /translate
 }
 """
 
-from flask import Flask, request, jsonify
+from flask import Flask, request, jsonify, render_template
 from translator import Translator  # Importamos nuestra clase de traducción
 
 # ------------------------------------------------------------
@@ -29,6 +29,12 @@ translator = Translator()
 # ------------------------------------------------------------
 # ENDPOINT PRINCIPAL DE TRADUCCIÓN
 # ------------------------------------------------------------
+
+@app.route("/")
+def index():
+    return render_template("index.html")
+
+
 @app.route("/translate", methods=["POST"])
 def translate_route():
     """
